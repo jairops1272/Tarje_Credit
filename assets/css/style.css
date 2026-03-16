@@ -1,0 +1,120 @@
+/* Variables de color */
+:root {
+    --dorado: #d4af37;
+    --fondo-caja: rgba(15, 15, 15, 0.85);
+}
+
+body {
+    /* Asegúrate de que el nombre del archivo coincida con la imagen que guardaste */
+    background-image: url('../img/fondo-premium.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.texto-dorado {
+    color: var(--dorado);
+}
+
+.caja-oscura {
+    background-color: var(--fondo-caja);
+    border: 1px solid var(--dorado);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.input-oscuro {
+    background-color: #222 !important;
+    color: white !important;
+    border: 1px solid #444;
+}
+
+.input-oscuro:focus {
+    border-color: var(--dorado);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+.btn-dorado {
+    background-color: var(--dorado);
+    color: black;
+}
+
+.btn-dorado:hover {
+    background-color: #b5952f;
+    color: white;
+}
+
+/* Diseño de la Tarjeta Simulada */
+.tarjeta-visual {
+    width: 100%;
+    max-width: 420px;
+    height: 260px;
+    background: linear-gradient(135deg, #1a1a1a, #000000);
+    border: 1px solid #333;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.img-fondo-tarjeta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.espaciado-letras {
+    letter-spacing: 2px;
+}
+/* --- ANIMACIÓN DE TRANSICIÓN SUAVE --- */
+.fade-in {
+    animation: aparecer 0.8s ease-out forwards;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- MAGIA 3D PARA LA TARJETA --- */
+.perspective {
+    perspective: 1000px; /* Da la profundidad para el efecto 3D */
+}
+
+.tarjeta-3d {
+    width: 100%;
+    max-width: 420px;
+    height: 260px;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d; /* Permite que los hijos tengan 3D */
+}
+
+/* Esta clase la agregaremos con JS para girar la tarjeta */
+.tarjeta-3d.girada {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara que está de espaldas */
+    background: linear-gradient(135deg, #1a1a1a, #0b0b0b);
+    border: 1px solid var(--dorado);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* El reverso debe estar volteado desde el principio */
+.tarjeta-reverso {
+    transform: rotateY(180deg);
+}
