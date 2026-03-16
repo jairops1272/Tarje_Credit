@@ -118,3 +118,39 @@ body {
 .tarjeta-reverso {
     transform: rotateY(180deg);
 }
+/* --- MAGIA 3D PARA LA TARJETA --- */
+.perspective {
+    perspective: 1000px; 
+}
+
+.tarjeta-3d {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1.586; /* ESTO ES CLAVE: Es la proporción real de una tarjeta de crédito */
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d; 
+}
+
+.tarjeta-3d.girada {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    background: linear-gradient(135deg, #1a1a1a, #0b0b0b);
+    border: 1px solid var(--dorado);
+    border-radius: 15px;
+    overflow: hidden;
+    /* Flexbox para que el texto se acomode solo si la tarjeta se hace pequeña */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-reverso {
+    transform: rotateY(180deg);
+}
