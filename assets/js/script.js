@@ -1,53 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    const formLogin = document.getElementById('form-login');
-    const seccionLogin = document.getElementById('seccion-login');
-    const seccionTarjeta = document.getElementById('seccion-tarjeta');
-
-    // 1. Simular el Login
-    formLogin.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita que la página se actualice
-        
-        // Ocultamos el login
-        seccionLogin.classList.remove('d-flex');
-        seccionLogin.classList.add('d-none');
-        
-        // Mostramos la tarjeta
-        seccionTarjeta.classList.remove('d-none');
-        seccionTarjeta.classList.add('d-flex');
-    });
-
-    // 2. Reflejar datos en la tarjeta en tiempo real
-    const inputNombre = document.getElementById('input-nombre');
-    const mostrarNombre = document.getElementById('mostrar-nombre');
-    
-    inputNombre.addEventListener('input', (e) => {
-        mostrarNombre.textContent = e.target.value.toUpperCase() || 'JOHN DOE';
-    });
-
-    const inputNumero = document.getElementById('input-numero');
-    const mostrarNumero = document.getElementById('mostrar-numero');
-    
-    inputNumero.addEventListener('input', (e) => {
-        mostrarNumero.textContent = e.target.value || '**** **** **** ****';
-    });
-
-    const inputVencimiento = document.getElementById('input-vencimiento');
-    const mostrarVencimiento = document.getElementById('mostrar-vencimiento');
-    
-    inputVencimiento.addEventListener('input', (e) => {
-        mostrarVencimiento.textContent = e.target.value || 'MM/AA';
-    });
-
-    const inputCvv = document.getElementById('input-cvv');
-    const mostrarCvv = document.getElementById('mostrar-cvv');
-    
-    inputCvv.addEventListener('input', (e) => {
-        mostrarCvv.textContent = e.target.value || '***';
-    });
-});
-document.addEventListener('DOMContentLoaded', function() {
-    
+    // Variables generales
     const formLogin = document.getElementById('form-login');
     const seccionLogin = document.getElementById('seccion-login');
     const seccionTarjeta = document.getElementById('seccion-tarjeta');
@@ -55,16 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 1. Transición suave del Login a la Tarjeta
     formLogin.addEventListener('submit', function(e) {
-        e.preventDefault(); 
+        e.preventDefault(); // Evita que la página se actualice al dar clic en Entrar
         
         seccionLogin.classList.remove('d-flex');
         seccionLogin.classList.add('d-none');
         
         seccionTarjeta.classList.remove('d-none');
-        seccionTarjeta.classList.add('d-flex', 'fade-in'); // Agregamos fade-in aquí
+        seccionTarjeta.classList.add('d-flex', 'fade-in'); 
     });
 
-    // 2. Elementos del formulario y la tarjeta
+    // Elementos de los inputs y textos a mostrar
     const inputNombre = document.getElementById('input-nombre');
     const mostrarNombre = document.getElementById('mostrar-nombre');
     
@@ -77,19 +30,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputCvv = document.getElementById('input-cvv');
     const mostrarCvv = document.getElementById('mostrar-cvv');
 
-    // 3. Lógica para reflejar datos
-    inputNombre.addEventListener('input', (e) => mostrarNombre.textContent = e.target.value.toUpperCase() || 'JOHN DOE');
-    inputNumero.addEventListener('input', (e) => mostrarNumero.textContent = e.target.value || '**** **** **** ****');
-    inputVencimiento.addEventListener('input', (e) => mostrarVencimiento.textContent = e.target.value || 'MM/AA');
-    inputCvv.addEventListener('input', (e) => mostrarCvv.textContent = e.target.value || '***');
+    // 2. Lógica para reflejar datos y VALIDAR NÚMEROS
+    
+    // Nombre (acepta texto normal)
+    inputNombre.addEventListener('input', (e) => {
+        mostrarNombre.textContent = e.target.value.toUpperCase() || 'LEON S. KENNEDY';
+    });
 
-    // 4. Lógica para GIRAR la tarjeta 3D
-    // Si hace focus en Nombre, mostramos el frente (quitamos clase girada)
+    // Número de Tarjeta (Solo números y pone espacios automáticos)
+    inputNumero.addEventListener('input', (e) => {
+        let valor = e.target.value.replace(/\D/g, ''); // Borra letras
+        valor = valor.replace(/(\d{4})/g, '$1 ').trim(); // Agrega espacio cada 4 dígitos
+        
+        e.target.value = valor;
+        mostrarNumero.textContent = valor || '**** **** **** ****';
+    });
+
+    // Vencimiento (Solo números y pone la diagonal / )
+    inputVencimiento.addEventListener('input', (e) => {
+        let valor = e.target.value.replace(/\D/g, ''); // Borra letras
+        
+        if (valor.length >= 2) {
+            valor = valor.substring(0, 2) + '/' + valor.substring(2, 4);
+        }
+        
+        e.target.value = valor;
+        mostrarVencimiento.textContent = valor || 'MM/AA';
+    });
+
+    // CVV (Solo números y muestra asteriscos en la tarjeta)
+    inputCvv.addEventListener('input', (e) => {
+        let valor = e.target.value.replace(/\D/g, ''); // Borra letras
+        e.target.value = valor;
+        mostrarCvv.textContent = '*'.repeat(valor.length) || '***'; 
+    });
+
+    // 3. Lógica para GIRAR la tarjeta 3D
+    // Mostrar el frente
     inputNombre.addEventListener('focus', () => {
         tarjetaVisual.classList.remove('girada');
     });
 
-    // Si hace focus en Número, Vencimiento o CVV, mostramos el reverso (agregamos clase girada)
+    // Mostrar el reverso
     [inputNumero, inputVencimiento, inputCvv].forEach(input => {
         input.addEventListener('focus', () => {
             tarjetaVisual.classList.add('girada');

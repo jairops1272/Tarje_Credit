@@ -38,8 +38,8 @@
                     <div class="tarjeta-cara tarjeta-frente p-4">
                         <h5 class="texto-dorado mb-5">Marca</h5>
                         <div class="mt-5 pt-4">
-                            <small class="text-muted d-block mb-1">Nombre de cliente</small>
-                            <div id="mostrar-nombre" class="fw-bold fs-5">JOHN DOE</div>
+                            <small class="text-white-50 d-block mb-1">Nombre de cliente</small>
+                            <div id="mostrar-nombre" class="fw-bold fs-5 text-white">Leon S. Kennedy</div>
                         </div>
                     </div>
 
@@ -47,16 +47,16 @@
                         <div class="bg-black w-100 mb-4" style="height: 40px; margin-left: -1.5rem; width: calc(100% + 3rem) !important;"></div>
                         
                         <div>
-                            <small class="text-muted d-block mb-1">Número de tarjeta</small>
+                            <small class="text-white-50 d-block mb-1">Número de tarjeta</small>
                             <h5 id="mostrar-numero" class="espaciado-letras mb-3 text-light">**** **** **** ****</h5>
                             
                             <div class="d-flex justify-content-between mt-3">
                                 <div>
-                                    <small class="text-muted">Vencimiento</small>
+                                    <small class="text-white-50">Vencimiento</small>
                                     <div id="mostrar-vencimiento" class="text-light">MM/AA</div>
                                 </div>
                                 <div class="bg-light text-dark px-3 py-1 rounded">
-                                    <small class="text-muted d-block" style="font-size: 0.7rem;">CVV</small>
+                                    <small class="text-white-50 d-block" style="font-size: 0.7rem;">CVV</small>
                                     <div id="mostrar-cvv" class="fw-bold">***</div>
                                 </div>
                             </div>
@@ -72,20 +72,20 @@
                     <form>
                         <div class="mb-3 text-start">
                             <label for="input-nombre" class="form-label text-light">Nombre de cliente</label>
-                            <input type="text" id="input-nombre" class="form-control input-oscuro" placeholder="Ej. John Doe">
+                            <input type="text" id="input-nombre" class="form-control input-oscuro" placeholder="Ej. Leon S. Kennedy">
                         </div>
                         <div class="mb-3 text-start">
                             <label for="input-numero" class="form-label text-light">Número de tarjeta</label>
-                            <input type="text" id="input-numero" class="form-control input-oscuro" placeholder="0000 0000 0000 0000" maxlength="19">
+                            <input type="text" id="input-numero" class="form-control input-oscuro" placeholder="0000 0000 0000 0000" maxlength="19" inputmode="numeric">
                         </div>
                         <div class="row text-start">
                             <div class="col-6 mb-3">
                                 <label for="input-vencimiento" class="form-label text-light">Vencimiento</label>
-                                <input type="text" id="input-vencimiento" class="form-control input-oscuro" placeholder="MM/AA" maxlength="5">
+                                <input type="text" id="input-vencimiento" class="form-control input-oscuro" placeholder="MM/AA" maxlength="5" inputmode="numeric">
                             </div>
                             <div class="col-6 mb-3">
                                 <label for="input-cvv" class="form-label text-light">CVV</label>
-                                <input type="password" id="input-cvv" class="form-control input-oscuro" placeholder="***" maxlength="4">
+                                <input type="password" id="input-cvv" class="form-control input-oscuro" placeholder="***" maxlength="4" inputmode="numeric">
                             </div>
                         </div>
                     </form>
