@@ -32,9 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 2. Lógica para reflejar datos y VALIDAR NÚMEROS
     
-    // Nombre (acepta texto normal)
+    // Nombre (Solo acepta letras, espacios y puntos)
     inputNombre.addEventListener('input', (e) => {
-        mostrarNombre.textContent = e.target.value.toUpperCase() || 'LEON S. KENNEDY';
+        // Borra cualquier cosa que NO sea letra, acento, ñ, espacio o punto
+        let valor = e.target.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s\.]/g, '');
+        e.target.value = valor;
+        
+        mostrarNombre.textContent = valor.toUpperCase() || 'LEON S. KENNEDY';
     });
 
     // Número de Tarjeta (Solo números y pone espacios automáticos)
