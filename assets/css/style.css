@@ -154,3 +154,43 @@ body {
 .tarjeta-reverso {
     transform: rotateY(180deg);
 }
+/* --- TÍTULO ANIMADO PREMIUM --- */
+.titulo-animado {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    
+    /* Efecto de texto dorado metálico moviéndose */
+    background: linear-gradient(90deg, #b5952f, #f9e596, #d4af37, #b5952f);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: brillo-metalico 3s linear infinite;
+}
+
+@keyframes brillo-metalico {
+    to { background-position: 200% center; }
+}
+
+/* Animación del subrayado que nace del centro */
+.titulo-animado::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--dorado);
+    box-shadow: 0 0 12px var(--dorado); /* Resplandor dorado */
+    transform: scaleX(0);
+    transform-origin: center; /* Crece desde el medio */
+    animation: linea-animada 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.8s; /* Aparece justo después de la transición de la pantalla */
+}
+
+@keyframes linea-animada {
+    to { transform: scaleX(1); }
+}
