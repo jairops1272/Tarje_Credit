@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <title>Portal Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Premium</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,7 +11,11 @@
     
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100 bg-dark"> <div id="seccion-login" class="container d-flex justify-content-center align-items-center flex-grow-1 px-3"> <div class="caja-oscura p-4 p-md-5 shadow-lg text-center w-100" style="max-width: 400px;"> <h2 class="texto-dorado mb-4">Ingresa tu cuenta</h2>
+<body class="d-flex flex-column min-vh-100">
+
+    <div id="seccion-login" class="container d-flex justify-content-center align-items-center flex-grow-1">
+        <div class="caja-oscura p-5 shadow-lg text-center">
+            <h2 class="texto-dorado mb-4">Ingresa tu cuenta</h2>
             <form id="form-login">
                 <div class="mb-3 text-start">
                     <label class="form-label text-light">Correo electrónico</label>
@@ -31,9 +36,16 @@
         </div>
     </div>
 
-    <div id="seccion-tarjeta" class="container d-none align-items-center justify-content-center flex-grow-1 my-4 my-md-5 px-3"> <div class="row w-100 align-items-center justify-content-center"> <div class="col-12 text-center mb-4 mb-md-5"> <h1 class="titulo-animado display-6 display-md-5 text-uppercase">Tarjeta de Crédito</h1> </div>
+    <div id="seccion-tarjeta" class="container d-none align-items-center justify-content-center flex-grow-1 my-4 my-md-5">
+        
+        <div class="row w-100 align-items-center">
+            
+            <div class="col-12 text-center mb-5">
+                <h1 class="titulo-animado display-5 text-uppercase">Tarjeta de Crédito</h1>
+            </div>
 
-            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-4 mb-lg-0 perspective"> <div class="tarjeta-3d shadow-lg" id="tarjeta-visual">
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-5 mb-lg-0 perspective">
+                <div class="tarjeta-3d shadow-lg" id="tarjeta-visual">
                     
                     <div class="tarjeta-cara tarjeta-frente p-3 p-md-4">
                         <h5 class="texto-dorado m-0">Marca</h5>
@@ -44,18 +56,20 @@
                     </div>
 
                     <div class="tarjeta-cara tarjeta-reverso p-3 p-md-4">
-                        <div class="bg-black w-100" style="height: 15%; margin-left: -1rem; margin-right: -1rem; width: calc(100% + 2rem) !important;"></div> <div>
-                            <small class="text-white-50 d-block mb-1 mt-2" style="font-size: 0.8rem;">Número de tarjeta</small>
-                            <h5 id="mostrar-numero" class="espaciado-letras mb-2 mb-md-3 text-light" style="font-size: clamp(0.9rem, 4vw, 1.25rem);">**** **** **** ****</h5>
+                        <div class="bg-black w-100" style="height: 15%; margin-left: -2rem; width: calc(100% + 4rem) !important;"></div>
+                        
+                        <div>
+                            <small class="text-white-50 d-block mb-1" style="font-size: 0.8rem;">Número de tarjeta</small>
+                            <h5 id="mostrar-numero" class="espaciado-letras mb-2 mb-md-3 text-light" style="font-size: clamp(1rem, 4vw, 1.25rem);">**** **** **** ****</h5>
                             
                             <div class="d-flex justify-content-between align-items-end">
                                 <div>
                                     <small class="text-white-50" style="font-size: 0.8rem;">Vencimiento</small>
-                                    <div id="mostrar-vencimiento" class="text-light fs-6">MM/AA</div>
+                                    <div id="mostrar-vencimiento" class="text-light">MM/AA</div>
                                 </div>
                                 <div class="bg-light text-dark px-2 py-1 rounded text-center">
                                     <small class="text-white-50 d-block text-dark" style="font-size: 0.6rem; font-weight: bold;">CVV</small>
-                                    <div id="mostrar-cvv" class="fw-bold lh-1 fs-6">***</div>
+                                    <div id="mostrar-cvv" class="fw-bold lh-1">***</div>
                                 </div>
                             </div>
                         </div>
@@ -64,13 +78,15 @@
                 </div>
             </div>
 
-            <div class="col-12 col-lg-6 d-flex justify-content-center"> <div class="caja-oscura p-3 p-md-4 shadow-lg w-100" style="max-width: 450px;"> <h3 class="texto-dorado mb-3 mb-md-4 text-center">Datos</h3>
+            <div class="col-12 col-lg-6">
+                <div class="caja-oscura p-4 shadow-lg">
+                    <h3 class="texto-dorado mb-4 text-center">Datos</h3>
                     <form>
                         <div class="mb-3 text-start">
                             <label for="input-nombre" class="form-label text-light">Nombre de cliente</label>
                             <div class="input-group">
                                 <span class="input-group-text input-oscuro texto-dorado border-end-0"><i class="bi bi-person-fill"></i></span>
-                                <input type="text" id="input-nombre" class="form-control input-oscuro border-start-0" placeholder="Ej. Leon S. Kennedy" maxlength="24">
+                                <input type="text" id="input-nombre" class="form-control input-oscuro border-start-0" placeholder="Ej. Leon S. Kennedy" maxlength="20">
                             </div>
                         </div>
                         
@@ -95,7 +111,7 @@
                                 <label for="input-cvv" class="form-label text-light">CVV</label>
                                 <div class="input-group">
                                     <span class="input-group-text input-oscuro texto-dorado border-end-0"><i class="bi bi-123"></i></span>
-                                    <input type="password" id="input-cvv" class="form-control input-oscuro border-start-0" placeholder="***" maxlength="4" inputmode="numeric">
+                                    <input type="password" id="input-cvv" class="form-control input-oscuro border-start-0" placeholder="***" maxlength="3" inputmode="numeric">
                                 </div>
                             </div>
                         </div>
@@ -106,10 +122,10 @@
         </div>
     </div>
 
-    <footer class="text-center py-3 py-md-4 mt-auto" style="background-color: rgba(10, 10, 10, 0.85); border-top: 1px solid var(--dorado); backdrop-filter: blur(5px);">
-        <div class="container px-3">
-            <p class="mb-1 fw-bold texto-dorado fs-6 fs-md-5">Desarrollado por Jairo</p>
-            <p class="mb-0 text-light opacity-75 small" style="font-size: 0.8rem;">Estudiante de Ingeniería en Sistemas | TecNM Campus Pachuca (ITP)</p>
+    <footer class="text-center py-4 mt-auto" style="background-color: rgba(10, 10, 10, 0.85); border-top: 1px solid var(--dorado); backdrop-filter: blur(5px);">
+        <div class="container">
+            <p class="mb-1 fw-bold texto-dorado fs-5">Desarrollado por Jairo</p>
+            <p class="mb-0 text-light opacity-75 small">Estudiante de Ingeniería en Sistemas | TecNM Campus Pachuca (ITP)</p>
         </div>
     </footer>
 
