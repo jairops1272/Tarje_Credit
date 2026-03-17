@@ -36,19 +36,19 @@
         </div>
     </div>
 
-    <div id="seccion-tarjeta" class="container d-none flex-column align-items-center justify-content-center flex-grow-1 my-4 my-md-5">
+    <div id="seccion-tarjeta" class="container d-none align-items-center justify-content-center flex-grow-1 my-4 my-md-5">
         
-        <div class="w-100 text-center mb-5">
-            <h1 class="titulo-animado display-5 text-uppercase">Tarjeta de Crédito</h1>
-        </div>
-
         <div class="row w-100 align-items-center">
             
-            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0 perspective">
+            <div class="col-12 text-center mb-5">
+                <h1 class="titulo-animado display-5 text-uppercase">Tarjeta de Crédito</h1>
+            </div>
+
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-5 mb-lg-0 perspective">
                 <div class="tarjeta-3d shadow-lg" id="tarjeta-visual">
                     
                     <div class="tarjeta-cara tarjeta-frente p-3 p-md-4">
-                        <h5 class="texto-dorado m-0">Resident Evil</h5>
+                        <h5 class="texto-dorado m-0">Marca</h5>
                         <div>
                             <small class="text-white-50 d-block mb-1">Nombre de cliente</small>
                             <div id="mostrar-nombre" class="fw-bold fs-6 fs-md-5 text-white text-truncate">Leon S. Kennedy</div>
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6">
                 <div class="caja-oscura p-4 shadow-lg">
                     <h3 class="texto-dorado mb-4 text-center">Datos</h3>
                     <form>
@@ -86,7 +86,7 @@
                             <label for="input-nombre" class="form-label text-light">Nombre de cliente</label>
                             <div class="input-group">
                                 <span class="input-group-text input-oscuro texto-dorado border-end-0"><i class="bi bi-person-fill"></i></span>
-                                <input type="text" id="input-nombre" class="form-control input-oscuro border-start-0" placeholder="Ej. Leon S. Kennedy" maxlength="21">
+                                <input type="text" id="input-nombre" class="form-control input-oscuro border-start-0" placeholder="Ej. Leon S. Kennedy" maxlength="24">
                             </div>
                         </div>
                         
@@ -111,7 +111,7 @@
                                 <label for="input-cvv" class="form-label text-light">CVV</label>
                                 <div class="input-group">
                                     <span class="input-group-text input-oscuro texto-dorado border-end-0"><i class="bi bi-123"></i></span>
-                                    <input type="password" id="input-cvv" class="form-control input-oscuro border-start-0" placeholder="***" maxlength="3" inputmode="numeric">
+                                    <input type="password" id="input-cvv" class="form-control input-oscuro border-start-0" placeholder="***" maxlength="4" inputmode="numeric">
                                 </div>
                             </div>
                         </div>
